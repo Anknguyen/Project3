@@ -1,3 +1,10 @@
+:root{
+  --gray: #2B2D30;
+  --bronze: #C18C44;
+  --plat: #E3DEDE;
+}
+
+
 .App {
   text-align: center;
 }
@@ -14,7 +21,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: var(--gray);
   min-height: 90vh;
   min-width: 99vw;
   display: flex;
@@ -39,7 +46,7 @@
 }
 
 .Nav{
-  background-color: blueviolet;
+  background-color: var(--bronze);
   min-height: 10vh;
   min-width: 99vw;
   display: flex;
@@ -55,14 +62,39 @@
   align-items: baseline;
   text-indent: 15px ;
   font-size: smaller;
+  text-shadow: 1px 3px 0px var(--gray);
+  cursor: pointer;
 }
 
 .NavItems{
   display: flex;
   margin-right: 15px;
   justify-content: space-evenly;
+  text-shadow: 1px 1px 0px var(--gray)
 }
 
 .NavItem{
   margin-right: 10px;
+}
+
+.loginForm{
+  background-color: #C18C44;
+  display: flex;
+  flex-direction: column wrap;
+  padding: 15px;
+}
+
+.loginContrast{
+  display: grid;
+  background-color: var(--plat);
+  border: #2B2D30 solid 1px;
+  padding: 70px;
+  color: #2b2d30;
+  font-size: smaller;
+  justify-content: baseline;
+}
+
+.loginContrast button{
+  padding: 5px;
+  margin: 5px;
 }
