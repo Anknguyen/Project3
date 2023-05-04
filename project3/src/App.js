@@ -1,4 +1,6 @@
 import './App.css';
+import './components/Login'
+import Login from './components/Login';
 
 function App() {
   return (
@@ -17,7 +19,9 @@ function App() {
       <div className="App-header">
         
       </div>
+      <Login></Login>
     </div>
+    
   );
 }
 
