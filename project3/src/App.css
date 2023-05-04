@@ -70,11 +70,16 @@
   display: flex;
   margin-right: 15px;
   justify-content: space-evenly;
-  text-shadow: 1px 1px 0px var(--gray)
+  text-shadow: 1px 1px 0px var(--gray);
 }
 
 .NavItem{
   margin-right: 10px;
+}
+
+.NavItem:hover{
+  color: var(--gray);
+  text-shadow: 1px 1px 0px var(--plat);
 }
 
 .loginForm{
