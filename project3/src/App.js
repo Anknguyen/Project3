@@ -15,7 +15,17 @@ function App() {
         </div>
       </div>
       <div className="App-header">
-        
+        <div className="loginForm">
+          <div className="loginContrast">
+            <label for="email"><strong>Email:</strong></label>
+            <input type="text" id="email" name="email"></input><br></br><br></br>
+            <label for="password"><strong>Password:</strong></label>
+            <input type="password" id="password" name="password"></input><br></br><br></br>
+            <button>Sign in</button>
+            <button>Create an account</button>
+          </div>
+          
+        </div>
       </div>
     </div>
   );
