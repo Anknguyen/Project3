@@ -16,7 +16,17 @@ function App() {
           <p className="NavItem">Login</p>
         </div>
       </div>
-      <div className="App-header">
+      <div className='App-header'>
+        <Login></Login>
+      </div>
+      
+    </div>
+    
+  );
+}
+
+export default App;
+{/* <div className="App-header">
         <div className="loginForm">
           <div className="loginContrast">
             <label for="email"><strong>Email:</strong></label>
@@ -27,12 +37,4 @@ function App() {
             <button>Create an account</button>
           </div>
           
-        </div>
-      </div>
-      <Login></Login>
-    </div>
-    
-  );
-}
-
-export default App;
+        </div> */}

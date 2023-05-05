@@ -70,11 +70,17 @@
   display: flex;
   margin-right: 15px;
   justify-content: space-evenly;
-  text-shadow: 1px 1px 0px var(--gray)
+  text-shadow: 1px 1px 0px var(--gray);
 }
 
 .NavItem{
   margin-right: 10px;
+}
+
+.NavItem:hover{
+  color: var(--gray);
+  text-shadow: 1px 1px 0px var(--plat);
+  cursor: pointer;
 }
 
 .loginForm{
@@ -85,16 +91,57 @@
 }
 
 .loginContrast{
-  display: grid;
+  display: grid ;
+  flex-direction: column;
+  flex-wrap: wrap;
   background-color: var(--plat);
   border: #2B2D30 solid 1px;
   padding: 70px;
   color: #2b2d30;
   font-size: smaller;
-  justify-content: baseline;
+  justify-items: center;
 }
 
-.loginContrast button{
-  padding: 5px;
-  margin: 5px;
+
+
+#btn{
+  display: flex;
+  font-size: 1rem;
+  font-weight: 600;
+  min-width: 180px;
+  padding: .5em .3em ;
+  color: var(--gray);
+  background-color: var(--bronze);
+  border: 1px solid var(--gray);
+  border-radius: 5px;
+  justify-content: center;
+/* Which property the transition should be applied to */
+  /* transition-property: transform ;  */
+/* How long the effect should take to complete */
+  /* transition-duration: 0.3s; */
+/* Defines the acceleration curve for the transition */
+/* ease-in, ease-out, ease-in-out, linear, ease (default) */
+  /* transition-timing-function: ease ; */
+/* How long before the transition takes effect */
+  /* transition-delay: 0s; */
+/* Shorthand for all of above properties */
+/* If we wanted all of the elements to be the same, like they are below 
+we just replace transform with all and delete the comma separators*/
+  transition: transform 0.3s, background-color 0.3s, color 0.3s;
+}
+
+#btn:hover{
+  transform: translateY(-5px);
+  background-color: var(--gray);
+  color: whitesmoke;
+}
+
+.label{
+  width: 100%;
+}
+
+.loginContrast label{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: flex-end;
 }

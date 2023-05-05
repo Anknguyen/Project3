@@ -23,28 +23,29 @@ export default function Login() {
     setPassword(e.target.value);
   };
   return (
-    <div>
+    <div className="loginForm">
       {isLoggedIn ? (
         <button onClick={handleLogout}>Logout</button>
       ) : (
-        <div>
-          <label>
-            Username:
+        <div className="loginContrast">
+          <label className="label" for="email">
+            <strong>Email: &nbsp;</strong>
             <input
               type="text"
               value={username}
               onChange={handleUsernameChange}
             />
-          </label>
-          <label>
-            Password:
+          </label><br></br>
+          <label className="label" for="password">
+            <strong>Password: &nbsp;</strong>
             <input
               type="password"
               value={password}
               onChange={handlePasswordChange}
             />
-          </label>
-          <button onClick={handleLogin}>Login</button>
+          </label><br></br>
+          <button id="btn" onClick={handleLogin}>Login</button><br></br>
+          <button id="btn">Create an account</button>
         </div>
       )}
     </div>
