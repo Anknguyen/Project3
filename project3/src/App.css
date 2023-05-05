@@ -134,6 +134,7 @@ we just replace transform with all and delete the comma separators*/
   transform: translateY(-5px);
   background-color: var(--gray);
   color: whitesmoke;
+  cursor: pointer;
 }
 
 .label{
