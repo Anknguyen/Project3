@@ -15,12 +15,8 @@ const userSchema = new Schema(
         trim: true
       }
   }
-//   {
-//     toJSON: {
-//       getters: true,
-//     },
-//     id: false,
-//   }
+
 );
 
-module.exports = userSchema;
+const User = model('user', userSchema);
+module.exports = User;
