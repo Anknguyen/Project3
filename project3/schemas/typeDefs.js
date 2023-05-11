@@ -25,3 +25,5 @@ type Query {
     getUsers: [User]
 }
 `;
+
+module.exports = typeDefs;
