@@ -180,3 +180,40 @@ input{
 .exampleGame:hover{
   cursor: pointer;
 }
+
+p{
+  font-size: medium;
+}
+
+.contentContainer{
+  border: 1px white solid;
+}
+
+.contentDisplay{
+  border: 2px yellow solid;
+  display: grid;
+  grid-template-columns: 40vw 40vw;
+  grid-template-rows: 10vh 15vh 10vh ;
+  grid-auto-rows: 35vh;
+  justify-items: center;
+  align-items: center;
+}
+
+.contentTitle{
+  grid-column: 1/-1;
+  font-size: larger;
+}
+
+.contentRating{
+  grid-column: 1/2;
+  grid-row-start: 1/2;
+}
+
+.contentGenres{
+  grid-column: 2/3;
+}
+
+.contentReviews{
+  grid-column: 1/-1;
+}
+

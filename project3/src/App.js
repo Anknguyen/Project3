@@ -1,7 +1,7 @@
 import './App.css';
+import Content from './components/Content';
 import Homepage from './components/Homepage';
-import './components/Login'
-// import Login from './components/Login';
+import Login from './components/Login';
 
 function App() {
   return (
@@ -11,15 +11,16 @@ function App() {
           <h1>Name Of Site</h1>
         </div>
         <div className="NavItems">
-          <p className="NavItem">Search</p>
-          <p className="NavItem">Genres</p>
-          <p className="NavItem">Profile</p>
-          <p className="NavItem">Login</p>
+          <h5 className="NavItem">Search</h5>
+          <h5 className="NavItem">Genres</h5>
+          <h5 className="NavItem">Profile</h5>
+          <h5 className="NavItem">Login</h5>
         </div>
       </div>
       <div className='App-header'>
-        <Homepage></Homepage>
-        {/* <Login></Login> */}
+        <Content/>
+        {/* <Homepage/> */}
+        {/* <Login/> */}
       </div>
       
     </div>
