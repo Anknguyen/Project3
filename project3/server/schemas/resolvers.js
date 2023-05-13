@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Thought } = require('../models');
+const { User, Content } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -12,10 +12,10 @@ const resolvers = {
     },
     thoughts: async (parent, { username }) => {
       const params = username ? { username } : {};
-      return Thought.find(params).sort({ createdAt: -1 });
+      return Content.find(params).sort({ createdAt: -1 });
     },
     thought: async (parent, { thoughtId }) => {
-      return Thought.findOne({ _id: thoughtId });
+      return Content.findOne({ _id: thoughtId });
     },
   },
 
@@ -53,7 +53,7 @@ const resolvers = {
     },
 
     addReview: async (parent, { thoughtId, commentText, commentAuthor }) => {
-      return Thought.findOneAndUpdate(
+      return Content.findOneAndUpdate(
         { _id: thoughtId },
         {
           $addToSet: { comments: { commentText, commentAuthor } },
@@ -65,10 +65,10 @@ const resolvers = {
       );
     },
     removeThought: async (parent, { thoughtId }) => {
-      return Thought.findOneAndDelete({ _id: thoughtId });
+      return Content.findOneAndDelete({ _id: thoughtId });
     },
     removeComment: async (parent, { thoughtId, commentId }) => {
-      return Thought.findOneAndUpdate(
+      return Content.findOneAndUpdate(
         { _id: thoughtId },
         { $pull: { comments: { _id: commentId } } },
         { new: true }

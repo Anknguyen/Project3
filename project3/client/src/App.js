@@ -1,6 +1,8 @@
 import './App.css';
 import './components/Login'
 import Login from './components/Login';
+import CreateContent from './components/CreateContent';
+import Homepage from './components/Homepage';
 
 function App() {
   return (
@@ -17,7 +19,6 @@ function App() {
         </div>
       </div>
       <div className='App-header'>
-        <Login></Login>
       </div>
       
     </div>
