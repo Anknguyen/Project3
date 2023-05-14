@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { Link } from "react-router-dom";
 
 function PostContent() {
   const [name, setName] = useState('');
@@ -54,7 +55,7 @@ function PostContent() {
         <textarea className="label" value={review} onChange={(e) => setReview(e.target.value)} />
       </label>
       <br />
-      <button type="submit">Submit</button>
+      <button type="submit"><Link to={`/`}>Submit</Link></button>
     </form>
     </div>
   );

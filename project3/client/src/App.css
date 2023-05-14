@@ -4,154 +4,6 @@
   --plat: #E3DEDE;
 }
 
-
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: var(--gray);
-  min-height: 90vh;
-  min-width: 99vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.Nav{
-  background-color: var(--bronze);
-  min-height: 10vh;
-  min-width: 99vw;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.title{
-  display: flex;
-  align-items: baseline;
-  text-indent: 15px ;
-  font-size: smaller;
-  text-shadow: 1px 3px 0px var(--gray);
-  cursor: pointer;
-}
-
-.NavItems{
-  display: flex;
-  margin-right: 15px;
-  justify-content: space-evenly;
-  text-shadow: 1px 1px 0px var(--gray);
-}
-
-.NavItem{
-  margin-right: 10px;
-}
-
-.NavItem:hover{
-  color: var(--gray);
-  text-shadow: 1px 1px 0px var(--plat);
-  cursor: pointer;
-}
-
-.loginForm{
-  background-color: #C18C44;
-  display: flex;
-  flex-direction: column wrap;
-  padding: 15px;
-}
-
-.loginContrast{
-  display: grid ;
-  flex-direction: column;
-  flex-wrap: wrap;
-  background-color: var(--plat);
-  border: #2B2D30 solid 1px;
-  padding: 70px;
-  color: #2b2d30;
-  font-size: smaller;
-  justify-items: center;
-}
-
-
-
-#btn{
-  display: flex;
-  font-size: 1rem;
-  font-weight: 600;
-  min-width: 180px;
-  padding: .5em .3em ;
-  color: var(--gray);
-  background-color: var(--bronze);
-  border: 1px solid var(--gray);
-  border-radius: 5px;
-  justify-content: center;
-/* Which property the transition should be applied to */
-  /* transition-property: transform ;  */
-/* How long the effect should take to complete */
-  /* transition-duration: 0.3s; */
-/* Defines the acceleration curve for the transition */
-/* ease-in, ease-out, ease-in-out, linear, ease (default) */
-  /* transition-timing-function: ease ; */
-/* How long before the transition takes effect */
-  /* transition-delay: 0s; */
-/* Shorthand for all of above properties */
-/* If we wanted all of the elements to be the same, like they are below 
-we just replace transform with all and delete the comma separators*/
-  transition: transform 0.3s, background-color 0.3s, color 0.3s;
-}
-
-#btn:hover{
-  transform: translateY(-5px);
-  background-color: var(--gray);
-  color: whitesmoke;
-}
-
-.label{
-  width: 100%;
-}
-
-.loginContrast label{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  justify-items: flex-end;
-}
-
-:root{
-  --gray: #2B2D30;
-  --bronze: #C18C44;
-  --plat: #E3DEDE;
-}
-
 body{
   background-color: #2B2D30;
 }
@@ -329,22 +181,27 @@ input{
   cursor: pointer;
 }
 
+a:visited{
+  color: white;
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+}
+
 p{
   font-size: medium;
 }
 
-.contentContainer{
-  border: 1px white solid;
-}
-
 .contentDisplay{
-  border: 2px yellow solid;
   display: grid;
   grid-template-columns: 40vw 40vw;
   grid-template-rows: 10vh 15vh 10vh ;
   grid-auto-rows: 35vh;
   justify-items: center;
   align-items: center;
+  column-gap: 20px;
 }
 
 .contentTitle{
@@ -364,111 +221,8 @@ p{
 .contentReviews{
   grid-column: 1/-1;
 }
-:root{
-  --gray: #2B2D30;
-  --bronze: #C18C44;
-  --plat: #E3DEDE;
-}
 
-body{
-  background-color: #2B2D30;
-}
-
-.App {
-  text-align: center;
-}
-
-/* .App-logo {
-  height: 40vmin;
-  pointer-events: none;
-} */
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: var(--gray);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.Nav{
-  background-color: var(--bronze);
-  max-height: 12vh;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.title{
-  display: flex;
-  align-items: baseline;
-  text-indent: 15px ;
-  font-size: smaller;
-  text-shadow: 1px 3px 0px var(--gray);
-  cursor: pointer;
-}
-
-.NavItems{
-  display: flex;
-  margin-right: 15px;
-  justify-content: space-evenly;
-  text-shadow: 1px 1px 0px var(--gray);
-}
-
-.NavItem{
-  margin-right: 10px;
-}
-
-.NavItem:hover{
-  color: var(--gray);
-  text-shadow: 1px 1px 0px var(--plat);
-  cursor: pointer;
-}
-
-.loginForm{
-  background-color: #C18C44;
-  display: flex;
-  flex-direction: column wrap;
-  padding: 15px;
-}
-
-.loginContrast{
-  display: grid ;
-  flex-direction: column;
-  flex-wrap: wrap;
-  background-color: var(--plat);
-  border: #2B2D30 solid 1px;
-  padding: 70px;
-  color: #2b2d30;
-  font-size: smaller;
-  justify-items: center;
-}
-
-#btn{
+#btn2{
   display: flex;
   font-size: 1rem;
   font-weight: 600;
@@ -476,8 +230,9 @@ body{
   padding: .5em .3em ;
   color: var(--gray);
   background-color: var(--bronze);
-  border: 1px solid var(--gray);
+  border: 2px solid var(--bronze);
   border-radius: 5px;
+  text-transform: none;
   justify-content: center;
 /* Which property the transition should be applied to */
   /* transition-property: transform ;  */
@@ -494,92 +249,15 @@ we just replace transform with all and delete the comma separators*/
   transition: transform 0.3s, background-color 0.3s, color 0.3s;
 }
 
-#btn:hover{
+#btn2:hover{
   transform: translateY(-5px);
   background-color: var(--gray);
+  border-color: #C18C44;
   color: whitesmoke;
   cursor: pointer;
 }
 
-.label{
-  width: 100%;
+button a{
+  text-transform: none;
+  color:black;
 }
-
-.loginContrast label{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  justify-items: flex-end;
-}
-
-input{
-  border-radius: 3px;
-  border-style: solid;
-  border-width: 1px;
-}
-
-.homepageContainer{
-  margin-top: 80px;
-  display: grid;
-  max-width:80%;
-  grid-template-columns: 7fr 7fr 7fr 7fr 7fr;
-  grid-template-rows: 10fr 10fr 10fr 10fr;
-  font-size: smaller;
-}
-
-.exampleGame{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin: 10px;
-  padding:20px 50px;
-  background-color: #C18C44;
-  border-color: #E3DEDE;
-  border-width: 1px;
-  border-style: solid;
-  border-radius: 5px;
-  justify-items: center;
-  align-items: center;
-  color: white;
-  text-shadow: 2px 1px 1px#2B2D30;
-}
-
-.exampleGame:hover{
-  cursor: pointer;
-}
-
-p{
-  font-size: medium;
-}
-
-.contentContainer{
-  border: 1px white solid;
-}
-
-.contentDisplay{
-  border: 2px yellow solid;
-  display: grid;
-  grid-template-columns: 40vw 40vw;
-  grid-template-rows: 10vh 15vh 10vh ;
-  grid-auto-rows: 35vh;
-  justify-items: center;
-  align-items: center;
-}
-
-.contentTitle{
-  grid-column: 1/-1;
-  font-size: larger;
-}
-
-.contentRating{
-  grid-column: 1/2;
-  grid-row-start: 1/2;
-}
-
-.contentGenres{
-  grid-column: 2/3;
-}
-
-.contentReviews{
-  grid-column: 1/-1;
-}
-

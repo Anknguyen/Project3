@@ -1,6 +1,8 @@
 import './App.css';
 import CreateContent from './components/CreateContent';
+import Content from './components/Content';
 import Homepage from './components/Homepage';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
@@ -17,6 +19,13 @@ function App() {
         </div>
       </div>
       <div className='App-header'>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/content" element={<Content />} />
+          <Route path="/createContent" element={<CreateContent />} />
+        </Routes>
+      </Router>
       </div>
       
     </div>
