@@ -1,6 +1,8 @@
 import './App.css';
 import CreateContent from './components/CreateContent';
+import Content from './components/Content';
 import Homepage from './components/Homepage';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
@@ -10,13 +12,20 @@ function App() {
           <h1>Name Of Site</h1>
         </div>
         <div className="NavItems">
-          <p className="NavItem">Search</p>
-          <p className="NavItem">Genres</p>
-          <p className="NavItem">Profile</p>
-          <p className="NavItem">Login</p>
+          <h5 className="NavItem">Search</h5>
+          <h5 className="NavItem">Genres</h5>
+          <h5 className="NavItem">Profile</h5>
+          <h5 className="NavItem">Login</h5>
         </div>
       </div>
       <div className='App-header'>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/content" element={<Content />} />
+          <Route path="/createContent" element={<CreateContent />} />
+        </Routes>
+      </Router>
       </div>
       
     </div>
@@ -25,15 +34,3 @@ function App() {
 }
 
 export default App;
-{/* <div className="App-header">
-        <div className="loginForm">
-          <div className="loginContrast">
-            <label for="email"><strong>Email:</strong></label>
-            <input type="text" id="email" name="email"></input><br></br><br></br>
-            <label for="password"><strong>Password:</strong></label>
-            <input type="password" id="password" name="password"></input><br></br><br></br>
-            <button>Sign in</button>
-            <button>Create an account</button>
-          </div>
-          
-        </div> */}
