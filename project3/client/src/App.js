@@ -1,6 +1,6 @@
-import './App.css';
-import CreateContent from './components/CreateContent';
-import Homepage from './components/Homepage';
+import "./App.css";
+import CreateContent from "./components/CreateContent";
+import Homepage from "./components/Homepage";
 
 function App() {
   return (
@@ -16,16 +16,14 @@ function App() {
           <p className="NavItem">Login</p>
         </div>
       </div>
-      <div className='App-header'>
-      </div>
-      
+      <Homepage></Homepage>
     </div>
-    
   );
 }
 
 export default App;
-{/* <div className="App-header">
+{
+  /* <div className="App-header">
         <div className="loginForm">
           <div className="loginContrast">
             <label for="email"><strong>Email:</strong></label>
@@ -36,4 +34,5 @@ export default App;
             <button>Create an account</button>
           </div>
           
-        </div> */}
+        </div> */
+}

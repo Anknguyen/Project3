@@ -8,7 +8,7 @@ const typeDefs = gql`
   }
 
   type content {
-    name: String!
+    title: String!
     rating: Number
     genre: String!
     review: String!
@@ -20,9 +20,10 @@ const typeDefs = gql`
   }
 
   type Query {
-    users: [User]
-    user(email: String!): User
-    content(name: String!): 
+    name: String!
+    rating: Number
+    genre: Sting!
+    reviews: Sting!
   }
 
   type Mutation {

@@ -35,7 +35,7 @@ function PostContent() {
     <div className='loginForm'>
     <form className="loginContrast" onSubmit={handleSubmit}>
       <label>
-        Name: &nbsp;
+        Title: &nbsp;
         <input className="label" type="text" value={name} onChange={(e) => setName(e.target.value)} />
       </label>
       <br />
@@ -54,7 +54,7 @@ function PostContent() {
         <textarea className="label" value={review} onChange={(e) => setReview(e.target.value)} />
       </label>
       <br />
-      <button type="submit">Submit</button>
+      <button onClick="myFunction(creatediv)" type="submit">Submit</button>
     </form>
     </div>
   );
