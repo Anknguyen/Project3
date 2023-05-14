@@ -31,17 +31,28 @@ const resolvers = {
   
 
 
-  
-  Mutation: {
-    addContent: async (title, rating, genre, review) => {
-      try {
-        const newContent = new Content({ title, rating, genre, review });
-        await newContent.save();
-        return newContent;
-      } catch (error) {
-        throw new Error(`Failed to add new content: ${error.message}`);
-      }
-    }}};
+    Mutation: {
+      addContent: async (parent, args) => {
+        const { title, rating, genre, review } = args;
+        try {
+          const newContent = new Content({ title, rating, genre, review });
+          await newContent.save();
+          return newContent;
+        } catch (error) {
+          throw new Error(`Failed to add new content: ${error.message}`);
+        }
+      }}};
+    
+  // Mutation: {
+  //   addContent: async (title, rating, genre, review) => {
+  //     try {
+  //       const newContent = new Content({ title, rating, genre, review });
+  //       await newContent.save();
+  //       return newContent;
+  //     } catch (error) {
+  //       throw new Error(`Failed to add new content: ${error.message}`);
+  //     }
+  //   }}};
   //   addContent: async (title, rating, genre, review) => {
   //     title
   //     rating
