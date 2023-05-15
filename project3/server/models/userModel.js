@@ -1,4 +1,4 @@
-const { Schema, Types } = require('mongoose');
+const { Schema, Types, model } = require('mongoose');
 
 const userSchema = new Schema(
   {
@@ -8,7 +8,7 @@ const userSchema = new Schema(
         required: true,
         match: /^[^\s@]+@[^\s@]+\.[^\s@]+$/
       },
-    username: {
+    password: {
         type: String,
         unique: true,
         required: true,

@@ -1,8 +1,8 @@
-const { Schema, Types } = require('mongoose');
+const { Schema, Types, model } = require('mongoose');
 
 const contentSchema = new Schema(
   {
-    name: {
+    title: {
         type: String,
         unique: true,
         required: true,
@@ -10,17 +10,20 @@ const contentSchema = new Schema(
       },
     rating: {
         type: Number,
-        unique: true,
         required: true,
         trim: true
       },
     genre: {
         type: String,
-        unique: true,
         required: true,
         trim: true
       },
-    reviews: {
+    review: {
+        type: String,
+        required: true,
+        trim: true
+      },
+      url: {
         type: String,
         unique: true,
         required: true,

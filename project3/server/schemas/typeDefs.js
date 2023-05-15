@@ -7,11 +7,12 @@ const typeDefs = gql`
     password: String
   }
 
-  type content {
+  type Content {
     title: String!
-    rating: Number
-    genre: String!
-    review: String!
+    rating: String
+    genre: String
+    review: String
+    url: String!
   }
 
   type Auth {
@@ -20,23 +21,21 @@ const typeDefs = gql`
   }
 
   type Query {
-    name: String!
-    rating: Number
-    genre: Sting!
-    reviews: Sting!
+    content (url: String): Content
+    allContent: [Content]
   }
 
   type Mutation {
-    addUser(email: String!, email: String!, password: String!): Auth
+    addUser(email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    addThought(thoughtText: String!, thoughtAuthor: String!): Thought
+    addContent( url: String!, title: String!, rating: String!, genre: String!, review: String!): Content
     addComment(
-      thoughtId: ID!
+      contentId: ID!
       commentText: String!
       commentAuthor: String!
-    ): Thought
-    removeThought(thoughtId: ID!): Thought
-    removeComment(thoughtId: ID!, commentId: ID!): Thought
+    ): Content
+    removeContent(contentId: ID!): Content
+    removeComment(contentId: ID!, commentId: ID!): Content
   }
 `;
 

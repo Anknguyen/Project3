@@ -1,12 +1,18 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import { ADD_CONTENT } from '../utils/mutations';
+import { useMutation } from '@apollo/client';
+import { useNavigate } from 'react-router-dom';
 
 
-function PostContent() {
-  const [name, setName] = useState('');
+function CreateContent() {
+  const [title, setTitle] = useState('');
   const [rating, setRating] = useState('');
   const [genre, setGenre] = useState('');
   const [review, setReview] = useState('');
+
+  const [addContent, { error }] = useMutation(ADD_CONTENT)
+
+  const navigate = useNavigate()
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -14,17 +20,20 @@ function PostContent() {
       const token = localStorage.getItem('token');
       if (!token) throw new Error('No token found');
 
-      const response = await axios.post('/api/content', {
-        name,
+  const url = title.split(" ").map(w => w.tolowercase()).join("");
+
+      const {data} = await addContent ({
+        variables: {
+        url,
+        title,
         rating,
         genre,
-        review
-      }, {
-        headers: {
-          Authorization: `Bearer ${token}`
-        }
+        review}
       });
-      console.log(response.data);
+
+
+      console.log(data);
+      navigate(`/Content/${url}`);
       // Do something with the response, such as displaying a success message
     } catch (error) {
       console.error(error);
@@ -33,26 +42,26 @@ function PostContent() {
   };
 
   return (
-    <div className='loginForm'>
-    <form className="loginContrast" onSubmit={handleSubmit}>
+    <div cltitle='loginForm'>
+    <form cltitle="loginContrast" onSubmit={handleSubmit}>
       <label>
         Title: &nbsp;
-        <input className="label" type="text" value={name} onChange={(e) => setName(e.target.value)} />
+        <input cltitle="label" type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
       </label>
       <br />
       <label>
         Rating: &nbsp;
-        <input className="label" type="number" max={10} value={rating} onChange={(e) => setRating(e.target.value)} />
+        <input cltitle="label" type="number" max={10} value={rating} onChange={(e) => setRating(e.target.value)} />
       </label>
       <br />
       <label>
         Genre: &nbsp;
-        <input className="label" type="text" value={genre} onChange={(e) => setGenre(e.target.value)} />
+        <input cltitle="label" type="text" value={genre} onChange={(e) => setGenre(e.target.value)} />
       </label>
       <br />
       <label>
         Review: &nbsp;
-        <textarea className="label" value={review} onChange={(e) => setReview(e.target.value)} />
+        <textarea cltitle="label" value={review} onChange={(e) => setReview(e.target.value)} />
       </label>
       <br />
       <button onClick="myFunction(creatediv)" type="submit">Submit</button>
@@ -61,4 +70,5 @@ function PostContent() {
   );
 }
 
-export default PostContent;
+
+export default CreateContent;
