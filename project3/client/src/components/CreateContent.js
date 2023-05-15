@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { Link } from "react-router-dom";
 
-function PostContent() {
+function CreateContent() {
   const [name, setName] = useState('');
   const [rating, setRating] = useState('');
   const [genre, setGenre] = useState('');
@@ -61,4 +61,4 @@ function PostContent() {
   );
 }
 
-export default PostContent;
+export default CreateContent;
